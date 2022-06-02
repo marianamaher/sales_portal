@@ -1,0 +1,21 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'welcome.js') }}"></script>
+<script src="welcome.js"></script> 
+
+<div class="homepage_container">
+    
+    <div class="welcome_title">
+        <b>Welcome to Columbia Paper Infinity </b></div>
+    <p></p> 
+    <div id="welcome_phrase">
+        Log all your paper sales on this website, even the ones you make on the phone. <p><br>
+            Press <button type="button" class="home-logsales">Log Sales</button> → enter client's name → add #reams sold → <b>SUBMIT ✓</b> 
+        </p>
+    </div>
+</div>
+
+{% endblock %}

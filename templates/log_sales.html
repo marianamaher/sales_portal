@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'log_sales.js') }}"></script>
+    <script src="log_sales.js"></script> 
+    
+    <script>
+        let sales = {{sales|tojson}} 
+        console.log(sales)
+        let clients = {{clients|tojson}} 
+        console.log(clients)
+    </script>
+
+    
+    <br>
+    <div id="initial_sales_person">* Logged Salesperson: </div>
+    <br>
+    <div class="row input_row">
+        <div class="col-md-3 log_title">
+            Log your paper sales:
+        </div>
+        <div class="col-md-3">
+            <input type="text" id="user_input_textbox" placeholder="client">   
+            <div class="alert alert-danger" role="alert"> invalid, both company and #reams are needed</div>
+        </div>
+        <div class="col-md-2">
+            <input id="reams_box" placeholder="#reams" size="10">
+            <div class="alert alert-danger" role="alert"> input an amount > 0</div> 
+            <div class="alert alert-secondary" role="alert"> invalid type </div>
+        </div>
+        <div class="col-md-1 submit">
+            <button id="input_button" class="btn first-button">Submit</button>
+        </div>
+        
+
+    </div>
+    <div class="row last_row">
+        <div class="col-md-3 name_client"></div>
+        <div class="col-md-3 company"></div>
+        <div class="col-md-2 number_resmas"></div>
+        <div class="col-md-1 delete_button"></div>
+    </div>
+
+
+{% endblock %}
+
